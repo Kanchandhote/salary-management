@@ -1,0 +1,120 @@
+/* ── Reset & base ─────────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f6fa; color: #1a1a2e; }
+
+/* ── Navbar ───────────────────────────────────────────────── */
+.navbar { display: flex; align-items: center; justify-content: space-between; background: #1a1a2e; padding: 0 2rem; height: 56px; position: sticky; top: 0; z-index: 100; }
+.navbar-brand { color: #fff; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.5px; }
+.navbar-links { display: flex; gap: 1rem; }
+.nav-link { color: #a0aec0; text-decoration: none; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+.nav-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.nav-link.active { background: rgba(99,179,237,0.2); color: #63b3ed; }
+
+/* ── Layout ───────────────────────────────────────────────── */
+.main-content { max-width: 1280px; margin: 0 auto; padding: 1.5rem; }
+.page { display: flex; flex-direction: column; gap: 1.25rem; }
+.page-header { display: flex; align-items: center; justify-content: space-between; }
+.page-header h1 { font-size: 1.5rem; font-weight: 700; }
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.section-header h2 { font-size: 1.1rem; }
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card { background: #fff; border-radius: 10px; padding: 1.25rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.card h2 { font-size: 1.1rem; margin-bottom: 1rem; color: #2d3748; }
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn { padding: 0.45rem 1rem; border-radius: 6px; border: none; cursor: pointer; font-size: 0.875rem; font-weight: 500; transition: opacity 0.15s; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: #3b82f6; color: #fff; }
+.btn-primary:hover:not(:disabled) { background: #2563eb; }
+.btn-secondary { background: #e2e8f0; color: #2d3748; }
+.btn-secondary:hover:not(:disabled) { background: #cbd5e0; }
+.btn-danger { background: #ef4444; color: #fff; }
+.btn-danger:hover:not(:disabled) { background: #dc2626; }
+.btn-icon { background: none; border: none; cursor: pointer; font-size: 1rem; padding: 0.2rem 0.4rem; border-radius: 4px; }
+.btn-icon:hover { background: #f0f4f8; }
+.btn-icon-danger:hover { background: #fee2e2; }
+
+/* ── Filters ──────────────────────────────────────────────── */
+.filters { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.filter-input { border: 1px solid #e2e8f0; border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.875rem; width: 220px; outline: none; }
+.filter-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.2); }
+.filter-select { border: 1px solid #e2e8f0; border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.875rem; }
+
+/* ── Table ────────────────────────────────────────────────── */
+.table-wrapper { overflow-x: auto; border-radius: 8px; border: 1px solid #e2e8f0; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead { background: #f7fafc; }
+th { padding: 0.65rem 0.9rem; text-align: left; font-weight: 600; color: #4a5568; border-bottom: 1px solid #e2e8f0; white-space: nowrap; }
+td { padding: 0.6rem 0.9rem; border-bottom: 1px solid #f0f4f8; color: #2d3748; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #f7fafc; }
+
+/* ── Pagination ───────────────────────────────────────────── */
+.pagination { display: flex; align-items: center; gap: 0.5rem; justify-content: center; padding: 0.5rem 0; }
+.page-info { font-size: 0.875rem; color: #718096; padding: 0 0.5rem; }
+.results-info { font-size: 0.8rem; color: #718096; }
+
+/* ── Stats grid ───────────────────────────────────────────── */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; margin-top: 0.75rem; }
+.stat-card { background: #f7fafc; border-radius: 8px; padding: 1rem; text-align: center; border: 1px solid #e2e8f0; }
+.stat-card--min { border-top: 3px solid #fc8181; }
+.stat-card--avg { border-top: 3px solid #68d391; }
+.stat-card--median { border-top: 3px solid #63b3ed; }
+.stat-card--max { border-top: 3px solid #9f7aea; }
+.stat-label { display: block; font-size: 0.75rem; color: #718096; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem; }
+.stat-value { display: block; font-size: 1.25rem; font-weight: 700; color: #1a202c; }
+
+/* ── Modal ────────────────────────────────────────────────── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 999; }
+.modal { background: #fff; border-radius: 12px; padding: 1.5rem; width: 100%; max-width: 620px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+.modal h2, .modal h3 { margin-bottom: 1rem; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.25rem; }
+
+/* ── Form ─────────────────────────────────────────────────── */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.form-group label { font-size: 0.8rem; font-weight: 600; color: #4a5568; }
+.form-group input, .form-group select { border: 1px solid #e2e8f0; border-radius: 6px; padding: 0.45rem 0.75rem; font-size: 0.875rem; width: 100%; }
+.form-group input:focus, .form-group select:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.2); }
+.error { color: #e53e3e; font-size: 0.75rem; }
+
+/* ── Misc ─────────────────────────────────────────────────── */
+.loading { color: #718096; padding: 1rem 0; }
+.error-msg { color: #e53e3e; padding: 0.75rem; background: #fff5f5; border-radius: 6px; font-size: 0.875rem; }
+
+/* filler for old CRA selector */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
